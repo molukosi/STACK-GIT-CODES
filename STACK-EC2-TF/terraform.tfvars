@@ -1,8 +1,0 @@
-AWS_ACCESS_KEY = "AKIAY3I4ESJVP4HI7P57"
-AWS_SECRET_KEY = "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"
-AWS_REGION     = "us-east-1"
-DB_PASSWORD    = "W3lcome123"
-DB_NAME        = "wordpressdb"
-DB_USER        = "wordpressuser"
-DB_SNAP_ID     = "arn:aws:rds:us-east-1:541478845275:snapshot:clixx-app-snap-restore"
-OLD_ENDPOINT   = "wordpress-db.cc5iigzknvxd.us-east-1.rds.amazonaws.com"
