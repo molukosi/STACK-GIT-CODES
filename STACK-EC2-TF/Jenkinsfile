@@ -6,37 +6,17 @@ pipeline {
     stages{
         stage('terraform init'){
             steps {
-                 sh '''
-                  cd STACK-EC2-TF
-                  terraform init
-                  '''
+                 sh "terraform init"                 
             }
         }
-        stage('terraform plan'){
-            steps {
-                 sh '''
-                  cd STACK-EC2-TF
-                  terraform plan -out=tfplan -input=false
-                  '''
-            }
-        }
-        stage('Final Deployment Approval') {
-               steps {
-                 script {
-                 def userInput = input(id: 'confirm', message: 'Deploy into Production?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Deploy Into Production', name: 'confirm'] ])
-              }
-            }
-        }
-        stage('terraform apply'){
-            steps {
-                 sh '''
-                  cd STACK-EC2-TF
-                  terraform apply -out=tfplan -input=false
-                  '''
-            }
-        }
+        // statge('terraform plan'){
+        //      steps {
+        //           sh "terraform plan -out=tfplan -input=false"
+        //      }
+        // }
     }
 }
+  
 def getTerraformPath(){
         def tfHome= tool name: 'Terraform-155', type: 'terraform'
         return tfHome
