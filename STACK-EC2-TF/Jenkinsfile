@@ -6,14 +6,13 @@ pipeline {
     stages{
         stage('terraform init'){
             steps {
-                 sh "terraform init"                 
+                 sh '''
+                  terraform init
+                  terraform plan -out=tfplan -input=false
+                  '''                 
             }
         }
-        // statge('terraform plan'){
-        //      steps {
-        //           sh "terraform plan -out=tfplan -input=false"
-        //      }
-        // }
+    
     }
 }
   
