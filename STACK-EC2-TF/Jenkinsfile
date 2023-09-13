@@ -7,6 +7,7 @@ pipeline {
         stage('terraform init'){
             steps {
                  sh '''
+                  cd STACK-EC2-TF
                   terraform init
                   '''                 
             }
@@ -15,6 +16,7 @@ pipeline {
         stage('terraform plan'){
             steps {
                  sh '''
+                  cd STACK-EC2-TF
                   terraform plan -out=tfplan -input=false
                   '''                 
             }
