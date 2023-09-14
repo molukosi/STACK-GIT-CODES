@@ -1,17 +1,17 @@
-variable "AWS_ACCESS_KEY" {}
-variable "AWS_SECRET_KEY" {}
+# variable "AWS_ACCESS_KEY" {}
+# variable "AWS_SECRET_KEY" {}
 variable "AWS_REGION" {
   default = "us-east-1"
 }
-variable "DB_PASSWORD" {}
+# variable "DB_PASSWORD" {}
 
-variable "DB_NAME" {}
+# variable "DB_NAME" {}
 
-variable "DB_USER" {}
+# variable "DB_USER" {}
 
-variable "DB_SNAP_ID" {}
+# variable "DB_SNAP_ID" {}
 
-variable "OLD_ENDPOINT" {}
+# variable "OLD_ENDPOINT" {}
 
 variable "server" {
   default = "serv"

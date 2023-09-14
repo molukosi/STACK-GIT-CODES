@@ -3,6 +3,16 @@ locals {
   Server_Prefix = ""
 }
 
+data "aws_secretsmanager_secret_version" "stack_clixx_secrets" {
+  name = "stack_clixx_secrets"
+}
+
+locals {
+  db_creds =jsondecode(
+    data.aws_secretsmanager_secret_version.stack_clixx_secrets.secret_string
+  )
+}
+
 resource "aws_key_pair" "Stack_KP" {
   key_name   = "stackkp"
   public_key = file(var.PATH_TO_PUBLIC_KEY)
