@@ -4,7 +4,7 @@ locals {
 }
 
 data "aws_secretsmanager_secret_version" "stack_clixx_secrets" {
-  name = "stack_clixx_secrets"
+  secret_id = "stack_clixx_secrets"
 }
 
 locals {
