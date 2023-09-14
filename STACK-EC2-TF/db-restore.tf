@@ -3,9 +3,9 @@ resource "aws_db_instance" "clixx-retail-app" {
   storage_type           = "gp2"
   engine                 = "mysql"
   instance_class         = "db.t2.micro"
-  identifier             = locals.db_creds.DB_NAME
-  username               = locals.db_creds.DB_USER
-  password               = locals.db_creds.DB_PASSWORD
+  identifier             = local.db_creds.DB_NAME
+  username               = local.db_creds.DB_USER
+  password               = local.db_creds.DB_PASSWORD
   parameter_group_name   = "default.mysql8.0"
   skip_final_snapshot    = true
   snapshot_identifier    = var.shared_snapshot_arn
